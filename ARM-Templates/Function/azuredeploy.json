@@ -83,13 +83,13 @@
             }
         },
         "functionStorageAccountName": {
-            "type": "int",
+            "type": "string",
             "metadata": {
                 "description": "A storage account will be created with the function. Define a unique name according to your naming convention. Only letters & numbers allowed, max 24 figures"
             }
         },
         "eventSubscriptionName": {
-            "type": "int",
+            "type": "string",
             "defaultValue": "[concat('evgs-', 'storagekeyrotation' , '-' ,parameters('secretName'))]",
             "metadata": {
                 "description": "An EventGrid event subscription will be created. Define a name according to your naming convention."
