@@ -72,7 +72,7 @@
             "defaultValue": 90,
             "type": "int",
             "metadata": {
-                "description": "Secret validity period days. It is used to calculate expiration date for a secret after rotation"
+                "description": "Secret validity period days. It is used to calculate expiration date for a secret after rotation. Rotation will be initialized 30 days before expiration..."
             }
         }
         
