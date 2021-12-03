@@ -48,6 +48,13 @@
                 "description": "The name of the function app that you wish to create."
             }
         },
+        "appInsightsName": {
+            "defaultValue": "[concat('appi-', 'keyrotation', '-prod', '-001')]",
+            "type": "String",
+            "metadata": {
+                "description": "The name of the function app that you wish to create."
+            }
+        },
         "AppServicePlanName": {
             "defaultValue": "[concat('plan-', 'keyrotation', '-prod', '-001')]",
             "type": "String",
@@ -171,7 +178,7 @@
                         },
                         {
                             "name": "APPINSIGHTS_INSTRUMENTATIONKEY",
-                            "value": "[reference(resourceId('microsoft.insights/components', parameters('functionAppName')), '2018-05-01-preview').InstrumentationKey]"
+                            "value": "[reference(resourceId('microsoft.insights/components', parameters('appInsightsName')), '2018-05-01-preview').InstrumentationKey]"
                         }
                     ]
                 }
@@ -195,7 +202,7 @@
         {
             "type": "microsoft.insights/components",
             "apiVersion": "2018-05-01-preview",
-            "name": "[parameters('functionAppName')]",
+            "name": "[parameters('appInsightsName')]",
             "location": "[resourceGroup().location]",
             "tags": {
                 "[concat('hidden-link:', resourceId('Microsoft.Web/sites', parameters('functionAppName')))]": "Resource"
