@@ -24,7 +24,6 @@
             }
         },
         "keyVaultName": {
-            "defaultValue": "",
             "type": "String",
             "metadata": {
                 "description": "The name of the existing key vault where secrets are stored."
